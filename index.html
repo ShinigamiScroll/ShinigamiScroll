@@ -1,43 +1,73 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="tr">
 <head>
-<!-- Materialize CSS -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ShinigamiScroll</title>
 
-<!-- Google Fonts ve Material Icons -->
-<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<div class="posts">
-  {% for post in site.posts %}
-    <article class="post">
+  <!-- Tailwind CSS (CDN üzerinden hızlı kullanım) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#6750A4',
+            surface: '#EDE6F6',
+            background: '#FFFBFE',
+            onSurface: '#1C1B1F',
+          },
+          fontFamily: {
+            sans: ['"Roboto"', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
 
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-
-      <div class="entry">
-        {{ post.excerpt }}
-      </div>
-
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
-  {% endfor %}
-</div>
-
-<div class="container">
-  <div class="row">
-    {% for post in site.posts %}
-      <div class="col s12 m6">
-        <div class="card hoverable">
-          <div class="card-content">
-            <span class="card-title">{{ post.title }}</span>
-            <p>{{ post.excerpt }}</p>
-          </div>
-          <div class="card-action">
-            <a href="{{ post.url }}">Devamını oku</a>
-          </div>
-        </div>
-      </div>
-    {% endfor %}
-  </div>
-</div>
+  <!-- Google Fonts - Roboto -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
+
+<body class="bg-background text-onSurface font-sans min-h-screen">
+
+  <!-- Navbar -->
+  <header class="bg-primary text-white p-4 shadow-md">
+    <div class="max-w-5xl mx-auto flex justify-between items-center">
+      <h1 class="text-xl font-semibold">ShinigamiScroll</h1>
+      <nav>
+        <a href="#" class="mx-2 hover:underline">Anasayfa</a>
+        <a href="#" class="mx-2 hover:underline">Yazılar</a>
+        <a href="#" class="mx-2 hover:underline">Hakkımda</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- İçerik -->
+  <main class="max-w-4xl mx-auto p-6 space-y-6">
+    <section class="bg-surface rounded-2xl shadow p-6">
+      <h2 class="text-2xl font-bold mb-2">Hoş geldin!</h2>
+      <p class="text-gray-700">Bu blogda düşüncelerini paylaşabilir, yazılarını yayınlayabilir ve tasarımını dilediğin gibi şekillendirebilirsin.</p>
+    </section>
+
+    <section class="grid md:grid-cols-2 gap-4">
+      <!-- Kart 1 -->
+      <div class="bg-surface rounded-2xl shadow p-4">
+        <h3 class="text-xl font-semibold">Son Yazı #1</h3>
+        <p class="text-gray-600 mt-2">İlk yazın burada görünecek. Markdown dosyalarını `_posts` klasörüne eklemeyi unutma.</p>
+      </div>
+
+      <!-- Kart 2 -->
+      <div class="bg-surface rounded-2xl shadow p-4">
+        <h3 class="text-xl font-semibold">Son Yazı #2</h3>
+        <p class="text-gray-600 mt-2">Bu alanda ikinci yazın yer alır. İçeriği güncelleyerek blogunu aktif tutabilirsin.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center text-sm text-gray-500 py-6">
+    © 2025 ShinigamiScroll. Tüm hakları saklıdır.
+  </footer>
+</body>
+</html>
