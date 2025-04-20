@@ -287,3 +287,47 @@ footer {
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "highlights";
 @import "svg-icons";
+
+:root {
+  --primary: #a5d6a7; /* Soft Green */
+  --secondary: #f5f5f5; /* Soft Grey */
+  --accent: #ffcc80; /* Soft Orange */
+  --text: #212121; /* Dark Grey */
+  --background: #ffffff; /* Light Background */
+  --card-bg: #f0f4c3; /* Light Green for cards */
+}
+
+body {
+  background-color: var(--secondary);
+  color: var(--text);
+  font-family: 'Roboto', sans-serif;
+}
+
+a {
+  color: var(--accent);
+}
+
+.card {
+  background-color: var(--card-bg);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  color: var(--text);
+}
+
+.card-action a {
+  color: var(--accent);
+}
+
+button {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: var(--primary);
+}
